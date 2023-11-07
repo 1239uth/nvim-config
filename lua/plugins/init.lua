@@ -87,6 +87,14 @@ local default_plugins = {
     end,
   },
 
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    after = "nvim-treesitter",
+    config = function()
+      require("treesitter-context.config").setup()
+    end,
+  },
+
   -- git stuff
   {
     "lewis6991/gitsigns.nvim",
