@@ -33,7 +33,7 @@ lspconfig.bufls.setup {
 lspconfig.clangd.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  cmd = {"clangd"}, 
+  cmd = {"clangd"},
   filetypes = {"c"},
 }
 
@@ -45,7 +45,15 @@ lspconfig.tsserver.setup {
     preferences = {
       disableSuggestions = false,
     }
-  }
+  },
+}
+
+lspconfig.eslint.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"eslint_d", "--stdin", "--stdin-filename", "$FILENAME",},
+  filetypes = {"javascript", "javascriptreact", "typescript", "typescriptreact"},
+  root_dir = util.root_pattern(".eslintrc.js", ".eslintrc.json", ".eslintrc", ".git", ".eslintrc.cjs")
 }
 
 -- Python

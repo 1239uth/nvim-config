@@ -1,0 +1,4 @@
+-- guifg=#c3cfd9 guibg=#1c2433
+-- vim.cmd [[
+--         hi IlluminatedWordRead gui=bold guifg=#c3cfd9 guibg=#1c2433
+--         ]]

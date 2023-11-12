@@ -1,8 +1,8 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = { 
-  theme = 'chadracula',
+M.ui = {
+  theme = 'bearded-arc',
   statusline = {
         overriden_modules = function(modules)
           table.insert(modules, " Ln %l, Col %c")
@@ -10,5 +10,7 @@ M.ui = {
     },
 }
 M.plugins = "custom.plugins"
+
+M.mappings = require "custom.mappings"
 
 return M
