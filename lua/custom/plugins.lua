@@ -42,8 +42,9 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter-context",
     after = "nvim-treesitter",
+    event = "BufWinEnter",
     config = function()
-      require("treesitter-context.config").setup()
+      require("custom.configs.treesitter-context")
     end,
   },
   {
@@ -80,7 +81,9 @@ local plugins = {
   },
   {
     'karb94/neoscroll.nvim',
-    keys = { '<C-d>', '<C-u>', '<C-b>', '<C-f>', 'zt', 'zz', 'zb' },
+    keys = { '<C-d>', '<C-u>', '<C-b>', '<C-f>', 'zt', 'zz', 'zb',
+      { "K", "<C-y>" }, { "J", "<C-e>" },
+    },
     config = function()
       require('neoscroll').setup()
     end,
